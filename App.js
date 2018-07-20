@@ -7,43 +7,21 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {View, TextInput, Text, Button} from 'react-native-ui-lib'
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native Nazip!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+          <View flex paddingH-25 paddingT-120>
+            <Text blue50 text20>Welcome</Text>
+            <TextInput text50 placeholder="username" dark10/>
+            <TextInput text50 placeholder="password1" secureTextEntry dark10/>
+            <View marginT-100 center>
+              <Button text70 white background-orange30 label="Login"/>
+              <Button link text70 orange30 label="Sign Up" marginT-20/>
+            </View>
+          </View>
+        );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 40,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
